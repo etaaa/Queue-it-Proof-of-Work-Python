@@ -1,21 +1,41 @@
-MIT License
+# Queue-it Proof-of-Work
 
-Copyright (c) 2022 eta
+[![Go Reference](https://pkg.go.dev/badge/github.com/etaaa/Queue-it-Proof-of-Work.svg)](https://pkg.go.dev/github.com/etaaa/Queue-it-Proof-of-Work)
+[![Go Report Card](https://goreportcard.com/badge/github.com/etaaa/Queue-it-Proof-of-Work)](https://goreportcard.com/report/github.com/etaaa/Queue-it-Proof-of-Work)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+A Golang solution for Queue-it's Proof-of-Work challenge (<https://queue-it.com/blog/proof-of-work-block-bad-bots/>).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Usage
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Install:
+```bash
+go get github.com/etaaa/Queue-it-Proof-of-Work
+```
+Usage:
+```bash
+package main
+
+import (
+	"fmt"
+	pow "github.com/etaaa/Queue-it-Proof-of-Work"
+)
+
+func main() {
+	/* GET THESE VALUES FROM THE RESPONSE WHEN FETCHING
+	THE CHALLENGE AT .../challengeapi/pow/challenge/... */
+	input := "f02b931c-52f0-4507-9406-f1221678dc16"
+	zeroCount := 2
+	// RETURNS THE CHALLENGE SOLUTION
+	solution := pow.SolveChallenge(input, zeroCount)
+	fmt.Println(solution)
+}
+```
+
+## Questions
+For any questions feel free to add and DM me on Discord (eta#0001).
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
