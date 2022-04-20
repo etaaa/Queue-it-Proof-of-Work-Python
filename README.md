@@ -5,7 +5,7 @@ A Python solution for Queue-it's Proof-of-Work challenge (<https://queue-it.com/
 ## Usage
 
 Usage:
-```bash
+```python
 import base64, hashlib, json
 
 def solveChallenge(input, zeroCount):
